@@ -1,8 +1,5 @@
-#***********************************************************
-# Created by Patricio Bulic, Davor Sluga UL FRI on 15/6/2022
-#***********************************************************
 CC = nvcc
-INCLUDES = -I.
+INCLUDES = -I../common
 
 # the build target executable:
 TARGET = prog
