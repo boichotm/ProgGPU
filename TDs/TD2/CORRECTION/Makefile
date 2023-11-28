@@ -5,23 +5,19 @@ CFLAGS=-O3 -Wall
 EXE1=pi.exe
 EXE2=pi_omp.exe
 # EXE3=pi_task.exe
-#EXE3=pi_cuda.exe
-#EXE4=pi_cuda_shared.exe
-#EXE5=pi_cuda_shared_2.exe
-#EXE6=pi_cuda_shared_3.exe
-#EXE7=pi_cuda_shared_4.exe
+EXE3=pi_cuda.exe
+EXE4=pi_cuda_shared.exe
+EXE5=pi_cuda_shared_2.exe
+EXE6=pi_cuda_shared_3.exe
+EXE7=pi_cuda_shared_4.exe
 
-all : $(EXE1) $(EXE2) 
-#$(EXE3) $(EXE4) $(EXE5) $(EXE6) $(EXE7) 
+all : $(EXE1) $(EXE2) $(EXE3) $(EXE4) $(EXE5) $(EXE6) $(EXE7) 
 
 $(EXE1) : pi_sequentiel.o
 	$(CC) $(CFLAGS) -o $@ $<
 
 $(EXE2) : pi_omp.o
 	$(CC) $(CFLAGS_OMP) -o $@ $<
-
-# $(EXE3) : pi_task.o
-#   $(CC) $(CFLAGS_OMP) -o $@ $<
 
 $(EXE3) : pi_cuda.cu
 	$(CUDA_CC) -O3 -o $@ $<
