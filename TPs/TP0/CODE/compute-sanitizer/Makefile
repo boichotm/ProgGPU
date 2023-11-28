@@ -1,8 +1,8 @@
 CC = nvcc -lineinfo
-INCLUDES = 
+INCLUDES = -I../common 
 
 # the build target executable:
-EXE = memcheck.exe initcheck.exe 
+EXE = memcheck.exe initcheck.exe out_of_bound.exe 
 
 all: $(EXE)
 

@@ -4,6 +4,6 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-CC	Makefile	/^CC = nvcc$/;"	m
-EXE	Makefile	/^EXE = memcheck.exe initcheck.exe $/;"	m
-INCLUDES	Makefile	/^INCLUDES = $/;"	m
+CC	Makefile	/^CC = nvcc -lineinfo$/;"	m
+EXE	Makefile	/^EXE = memcheck.exe initcheck.exe out_of_bound.exe $/;"	m
+INCLUDES	Makefile	/^INCLUDES = -I..\/common $/;"	m

@@ -46,16 +46,17 @@
 #define MIN(a, b) (a < b ? a : b)
 #endif
 
+#define checkCudaErrors(val) check((val), #val, __FILE__, __LINE__)
 #define getLastCudaError(msg) __getLastCudaError(msg, __FILE__, __LINE__)
-#define checkCudaErrors(ans) { gpuAssert((ans), __FILE__, __LINE__); }
 
-inline void gpuAssert(cudaError_t code, const char *file, int line, bool abort=false)
+void check(cudaError_t result, char const *const func, const char *const file,
+           int const line)
 {
-   if (code != cudaSuccess)
-   {
-      fprintf(stderr,"GPUassert: %s %s %d\n", cudaGetErrorString(code), file, line);
-      if (abort) exit(code);
-   }
+  if (result)
+  {
+    fprintf(stderr, "CUDA error at %s:%d code=%d (%s) \"%s\" \n", file, line, (int)result, cudaGetErrorName(result), func);
+    exit(EXIT_FAILURE);
+  }
 }
 
 inline void __getLastCudaError(const char *errorMessage, const char *file,

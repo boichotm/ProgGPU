@@ -1,0 +1,18 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC = nvcc$/;"	m
+COMMON_HELPER_CUDA_H_	helper_cuda.h	32;"	d
+INCLUDES	Makefile	/^INCLUDES = -I.$/;"	m
+MAX	helper_cuda.h	42;"	d
+MIN	helper_cuda.h	46;"	d
+TARGET	Makefile	/^TARGET = prog$/;"	m
+_ConvertSMVer2ArchName	helper_cuda.h	/^inline const char *_ConvertSMVer2ArchName(int major, int minor)$/;"	f
+_ConvertSMVer2Cores	helper_cuda.h	/^int _ConvertSMVer2Cores(int major, int minor)$/;"	f
+__getLastCudaError	helper_cuda.h	/^inline void __getLastCudaError(const char *errorMessage, const char *file,$/;"	f
+check	helper_cuda.h	/^void check(cudaError_t result, char const *const func, const char *const file,$/;"	f
+checkCudaErrors	helper_cuda.h	49;"	d
+getLastCudaError	helper_cuda.h	50;"	d

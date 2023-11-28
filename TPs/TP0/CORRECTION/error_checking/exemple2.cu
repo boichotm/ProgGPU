@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 
 	int *h_b;
 	int res = 0;
-	int *d_a, *d_b;
+	int *d_a, *d_b, *d_dummy;
 
 	// Allocation on host (malloc)
 	h_b = (int *)malloc(sz_in_bytes);
@@ -43,6 +43,7 @@ int main(int argc, char **argv)
 
 	// Kernel launch
 	copy<<<dimGrid, dimBlock>>>(d_a, d_b);
+	checkCudaErrors(cudaMalloc((void **)&d_dummy, sz_in_bytes));
 	checkCudaErrors(cudaGetLastError());
 	checkCudaErrors(cudaDeviceSynchronize());
 
