@@ -34,21 +34,18 @@ int verify_matrix(double *matRef, double *matOut, int N) {
   return 0;
 }
 
-void init(double* A, double* B, double* C, int size)
-{
-  int i = 0, j = 0;
+void init(double* A, double* B, double* C, int size) {
+    int i = 0, j = 0;
 
-	srand(2019);
+    srand(2019);
 
-	for(i = 0; i < size; i++)
-  {
-		for(j = 0; j < size; j++)
-    {
-			A[i * size + j] = rand();
-			B[i * size + j] = rand();
-			C[i * size + j] = 0.0;
-		}
-	}
+    for (i = 0; i < size; i++) {
+        for (j = 0; j < size; j++) {
+            A[i * size + j] = (double)(rand() % 10) + 0.01 * (rand() % 5);
+            B[i * size + j] = (double)(rand() % 10) + 0.01 * (rand() % 5);
+            C[i * size + j] = 0.0;
+        }
+    }
 }
 
 void mult(double* A, double* B, double* C, int size)
