@@ -1,4 +1,4 @@
-CC=clang -fopenmp -fopenmp-targets=nvptx64-nvidia-cuda -Xopenmp-target -march=sm_60
+CC=clang -fopenmp -fopenmp-targets=nvptx64-nvidia-cuda
 CFLAGS=-O3 -Wall
 LDFLAGS=-lm -lrt
 
